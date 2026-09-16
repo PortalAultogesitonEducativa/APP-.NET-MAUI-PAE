@@ -1,17 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace PAE_APP_MOVIL_1._0
+﻿namespace PAE_APP_MOVIL_1._0
 {
     public partial class App : Application
     {
-        public App()
+        public App(LoginPage loginPage)
         {
             InitializeComponent();
-        }
-
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
+            MainPage = new NavigationPage(loginPage);
         }
     }
 }
