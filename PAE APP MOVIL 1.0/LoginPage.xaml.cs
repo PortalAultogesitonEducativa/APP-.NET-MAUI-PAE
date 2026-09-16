@@ -1,6 +1,7 @@
 using PAE_APP_MOVIL_1._0.Data;
 using PAE_APP_MOVIL_1._0.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace PAE_APP_MOVIL_1._0
 {
@@ -26,7 +27,8 @@ namespace PAE_APP_MOVIL_1._0
 
         private async void OnOlvidoPasswordTapped(object sender, EventArgs e)
         {
-            await DisplayAlert("Recuperar contraseña", "Esta función se implementará próximamente.", "Aceptar");
+            var forgotPage = Application.Current.Handler.MauiContext.Services.GetRequiredService<ForgotPasswordPage>();
+            await Navigation.PushAsync(forgotPage);
         }
 
         private async void OnIngresarClicked(object sender, EventArgs e)
