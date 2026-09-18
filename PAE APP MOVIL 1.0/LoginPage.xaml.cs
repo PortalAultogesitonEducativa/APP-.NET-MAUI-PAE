@@ -1,7 +1,6 @@
 using PAE_APP_MOVIL_1._0.Data;
 using PAE_APP_MOVIL_1._0.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace PAE_APP_MOVIL_1._0
 {
@@ -75,11 +74,18 @@ namespace PAE_APP_MOVIL_1._0
                     return;
                 }
 
-                // Por ahora navegamos a MainPage como pantalla temporal.
-                // Aquí luego distinguiremos entre pantalla de Estudiante y de Acudiente.
-                await DisplayAlert("Bienvenido", $"Hola {usuarioLogueado.NOMBRES}, rol: {rol}", "Continuar");
-                Application.Current.MainPage = new NavigationPage(
-                    Application.Current.Handler.MauiContext.Services.GetRequiredService<MainPage>());
+                if (rol == "estudiante")
+                {
+                    var dashboard = Application.Current.Handler.MauiContext.Services.GetRequiredService<StudentDashboardPage>();
+                    dashboard.ConfigurarUsuario(usuarioLogueado);
+                    Application.Current.MainPage = new NavigationPage(dashboard);
+                }
+                else
+                {
+                    var dashboard = Application.Current.Handler.MauiContext.Services.GetRequiredService<AcudienteDashboardPage>();
+                    dashboard.ConfigurarUsuario(usuarioLogueado);
+                    Application.Current.MainPage = new NavigationPage(dashboard);
+                }
             }
             catch (Exception ex)
             {

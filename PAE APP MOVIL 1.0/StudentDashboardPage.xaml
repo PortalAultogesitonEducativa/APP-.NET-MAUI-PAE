@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PAE_APP_MOVIL_1._0.StudentDashboardPage"
+             BackgroundColor="#F5F5F7"
+             Title="PAE">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,24" Spacing="16">
+
+            <Label x:Name="BienvenidaLabel"
+                   Text="Bienvenido/a"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#152A4E" />
+
+            <Border BackgroundColor="#152A4E"
+                    Padding="16,12"
+                    Stroke="Transparent">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8" />
+                </Border.StrokeShape>
+                <Label Text="🎓 SISTEMA DE GESTIÓN PAE"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="14" />
+            </Border>
+
+            <Label Text="🎓 Mi Panel Académico"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#7B5FE0"
+                   Margin="0,10,0,0" />
+
+            <BoxView HeightRequest="3" BackgroundColor="#7B5FE0" />
+
+            <Border BackgroundColor="White"
+                    Padding="20"
+                    Stroke="#EEEEEE"
+                    StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Label Text="📅" FontSize="32" HorizontalOptions="Center" />
+                    <Label Text="Horario de Clases"
+                           FontSize="17"
+                           FontAttributes="Bold"
+                           TextColor="#152A4E"
+                           HorizontalOptions="Center" />
+                    <Label Text="Consulta tus materias y salones."
+                           FontSize="13"
+                           TextColor="#8A8A8A"
+                           HorizontalOptions="Center" />
+                    <Button Text="Ver Horario"
+                            BackgroundColor="Transparent"
+                            TextColor="#7B5FE0"
+                            BorderColor="#7B5FE0"
+                            BorderWidth="1"
+                            CornerRadius="8"
+                            Clicked="OnHorarioClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <BoxView HeightRequest="3" BackgroundColor="#7B5FE0" />
+
+            <Border BackgroundColor="White"
+                    Padding="20"
+                    Stroke="#EEEEEE"
+                    StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Label Text="📋" FontSize="32" HorizontalOptions="Center" />
+                    <Label Text="Calificaciones"
+                           FontSize="17"
+                           FontAttributes="Bold"
+                           TextColor="#152A4E"
+                           HorizontalOptions="Center" />
+                    <Label Text="Mira tus notas del periodo actual."
+                           FontSize="13"
+                           TextColor="#8A8A8A"
+                           HorizontalOptions="Center" />
+                    <Button Text="Ver Notas"
+                            BackgroundColor="Transparent"
+                            TextColor="#2F6FED"
+                            BorderColor="#2F6FED"
+                            BorderWidth="1"
+                            CornerRadius="8"
+                            Clicked="OnVerNotasClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <BoxView HeightRequest="3" BackgroundColor="#7B5FE0" />
+
+            <Border BackgroundColor="White"
+                    Padding="20"
+                    Stroke="#EEEEEE"
+                    StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Label Text="📝" FontSize="32" HorizontalOptions="Center" />
+                    <Label Text="Actividades"
+                           FontSize="17"
+                           FontAttributes="Bold"
+                           TextColor="#152A4E"
+                           HorizontalOptions="Center" />
+                    <Label Text="Consulta tus tareas y entregas."
+                           FontSize="13"
+                           TextColor="#8A8A8A"
+                           HorizontalOptions="Center" />
+                    <Button Text="Ver Actividades"
+                            BackgroundColor="Transparent"
+                            TextColor="#7B5FE0"
+                            BorderColor="#7B5FE0"
+                            BorderWidth="1"
+                            CornerRadius="8"
+                            Clicked="OnActividadesClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PAE_APP_MOVIL_1._0.AcudienteDashboardPage"
+             BackgroundColor="#F5F5F7"
+             Title="PAE">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,24" Spacing="16">
+
+            <Label x:Name="BienvenidaLabel"
+                   Text="Bienvenido/a"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#152A4E" />
+
+            <Border BackgroundColor="#152A4E"
+                    Padding="16,12"
+                    Stroke="Transparent">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8" />
+                </Border.StrokeShape>
+                <Label Text="🎓 SISTEMA DE GESTIÓN PAE"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="14" />
+            </Border>
+
+            <Grid ColumnDefinitions="Auto,*" Margin="0,10,0,0" VerticalOptions="Center">
+                <Label Grid.Column="0"
+                       Text="🧑‍🤝‍🧑 Panel de Padres"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#1E8E5A"
+                       VerticalOptions="Center" />
+            </Grid>
+
+            <Border BackgroundColor="#1E8E5A"
+                    Padding="14,8"
+                    Stroke="Transparent"
+                    HorizontalOptions="Start">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="6">
+                    <Label Grid.Column="0"
+                           Text="Hijo(a):"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center" />
+                    <Picker x:Name="HijoPicker"
+                            Grid.Column="1"
+                            TextColor="White"
+                            TitleColor="White"
+                            BackgroundColor="Transparent"
+                            SelectedIndexChanged="OnHijoSeleccionado" />
+                </Grid>
+            </Border>
+
+            <BoxView HeightRequest="3" BackgroundColor="#1E8E5A" />
+
+            <Border BackgroundColor="White"
+                    Padding="20"
+                    Stroke="#EEEEEE"
+                    StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Label Text="📋" FontSize="32" HorizontalOptions="Center" />
+                    <Label Text="Ver Calificaciones"
+                           FontSize="17"
+                           FontAttributes="Bold"
+                           TextColor="#152A4E"
+                           HorizontalOptions="Center" />
+                    <Label x:Name="PromedioLabel"
+                           Text="Cargando..."
+                           FontSize="14"
+                           TextColor="#1E8E5A"
+                           HorizontalOptions="Center" />
+                    <Button Text="Ver Reporte"
+                            BackgroundColor="Transparent"
+                            TextColor="#1E8E5A"
+                            BorderColor="#1E8E5A"
+                            BorderWidth="1"
+                            CornerRadius="8"
+                            Clicked="OnVerCalificacionesClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <BoxView HeightRequest="3" BackgroundColor="#1E8E5A" />
+
+            <Border BackgroundColor="White"
+                    Padding="20"
+                    Stroke="#EEEEEE"
+                    StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Label Text="✅" FontSize="32" HorizontalOptions="Center" />
+                    <Label Text="Asistencia"
+                           FontSize="17"
+                           FontAttributes="Bold"
+                           TextColor="#152A4E"
+                           HorizontalOptions="Center" />
+                    <Label Text="Próximamente"
+                           FontSize="13"
+                           TextColor="#8A8A8A"
+                           HorizontalOptions="Center" />
+                    <Button Text="Ver Detalle"
+                            BackgroundColor="Transparent"
+                            TextColor="#1E8E5A"
+                            BorderColor="#1E8E5A"
+                            BorderWidth="1"
+                            CornerRadius="8"
+                            Clicked="OnAsistenciaClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <BoxView HeightRequest="3" BackgroundColor="#1E8E5A" />
+
+            <Border BackgroundColor="White"
+                    Padding="20"
+                    Stroke="#EEEEEE"
+                    StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Label Text="💬" FontSize="32" HorizontalOptions="Center" />
+                    <Label Text="Citaciones"
+                           FontSize="17"
+                           FontAttributes="Bold"
+                           TextColor="#152A4E"
+                           HorizontalOptions="Center" />
+                    <Label Text="Mensajes de profesores citando a reunión."
+                           FontSize="13"
+                           TextColor="#8A8A8A"
+                           HorizontalOptions="Center" />
+                    <Button Text="Ver Citaciones"
+                            BackgroundColor="Transparent"
+                            TextColor="#1E8E5A"
+                            BorderColor="#1E8E5A"
+                            BorderWidth="1"
+                            CornerRadius="8"
+                            Clicked="OnCitacionesClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PAE_APP_MOVIL_1._0.NotasPage"
+             BackgroundColor="#F5F5F7"
+             Title="Calificaciones">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto" Padding="20,20">
+
+        <Label x:Name="TituloLabel"
+               Grid.Row="0"
+               Text="Mis Notas"
+               FontSize="20"
+               FontAttributes="Bold"
+               TextColor="#152A4E"
+               Margin="0,0,0,8" />
+
+        <Border Grid.Row="1"
+                BackgroundColor="#EAF2FF"
+                Padding="16,12"
+                Stroke="Transparent"
+                Margin="0,0,0,12">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Label x:Name="PromedioLabel"
+                   Text="Cargando..."
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#2F6FED" />
+        </Border>
+
+        <CollectionView x:Name="NotasCollection" Grid.Row="2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border BackgroundColor="White"
+                            Padding="16"
+                            Margin="0,0,0,10"
+                            Stroke="#EEEEEE"
+                            StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10" />
+                        </Border.StrokeShape>
+                        <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                            <Label Grid.Row="0" Grid.Column="0"
+                                   Text="{Binding Materia}"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   TextColor="#152A4E" />
+                            <Label Grid.Row="1" Grid.Column="0"
+                                   Text="{Binding Periodo, StringFormat='Periodo {0}'}"
+                                   FontSize="13"
+                                   TextColor="#8A8A8A" />
+                            <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
+                                   Text="{Binding Nota, StringFormat='{0:0.0}'}"
+                                   FontSize="24"
+                                   FontAttributes="Bold"
+                                   TextColor="#2F6FED"
+                                   VerticalOptions="Center" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Label x:Name="SinNotasLabel"
+               Grid.Row="2"
+               Text="Todavía no tienes notas registradas."
+               FontSize="14"
+               TextColor="#8A8A8A"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsVisible="False" />
+
+        <ActivityIndicator x:Name="CargandoIndicator"
+                           Grid.Row="3"
+                           IsRunning="False"
+                           IsVisible="False"
+                           Color="#152A4E" />
+
+    </Grid>
+
+</ContentPage>

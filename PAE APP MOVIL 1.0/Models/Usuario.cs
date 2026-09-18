@@ -60,16 +60,6 @@ namespace PAE_APP_MOVIL_1._0.Models
         public bool ES_PRINCIPAL { get; set; }
     }
 
-    [Table("ASISTENCIA")]
-    public class Asistencia
-    {
-        [Key]
-        public int id_asistencia { get; set; }
-        public int id_estudiante { get; set; }
-        public DateTime fecha { get; set; }
-        public string? estado { get; set; }
-    }
-
     [Table("EVALUACION")]
     public class Evaluacion
     {

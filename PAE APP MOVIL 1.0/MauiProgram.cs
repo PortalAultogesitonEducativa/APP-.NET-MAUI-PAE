@@ -18,7 +18,7 @@ public static class MauiProgram
         string connectionString;
 
 
-        connectionString = "Server=10.0.1.172,1433;Database=GestionAcademica;User Id=pae_app;Password=pae2025sena;TrustServerCertificate=True;";
+        connectionString = "Server=10.0.0.146,1433;Database=GestionAcademica;User Id=pae_app;Password=pae2025sena;TrustServerCertificate=True;";
 
 
         builder.Services.AddDbContext<AppDbContext>(options =>
@@ -29,6 +29,15 @@ public static class MauiProgram
         builder.Services.AddScoped<AuthService>();
         builder.Services.AddTransient<ForgotPasswordPage>();
         builder.Services.AddTransient<ResetPasswordPage>();
+        builder.Services.AddScoped<NotasService>();
+        builder.Services.AddTransient<StudentDashboardPage>();
+        builder.Services.AddTransient<NotasPage>();
+        builder.Services.AddScoped<AcudienteService>();
+        builder.Services.AddScoped<CitacionesService>();
+        builder.Services.AddTransient<AcudienteDashboardPage>();
+        builder.Services.AddTransient<CitacionesPage>();
+        builder.Services.AddScoped<AsistenciaService>();
+        builder.Services.AddTransient<AsistenciaPage>();
 
         return builder.Build();
     }
